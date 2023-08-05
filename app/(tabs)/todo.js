@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView } from 'react-native'
 import { Keyboard } from 'react-native'
 import Task from '../../components/Task'
+import { Button } from 'react-native-elements'
 
 
 const todo = () => {
@@ -30,19 +31,18 @@ const todo = () => {
         contentContainerStyle={{ flexGrow: 1 }}
         keyboardShouldPersistTaps='handled'
     >
-          <View style={styles.items}>
+        
             
             {taskItems && taskItems.map((item, index) => {
                 return (
-                    <TouchableOpacity key={index} 
-                    onPress={() => completeTask(index)}
-                    >
-                        <Task text={item} />
-                    </TouchableOpacity>
+                    
+                        <Task text={item} completeTask={completeTask} index={index}/>
+                     
+                  
                 )
             }
             )}
-            </View>
+            
             </ScrollView>
             <View style={styles.writeTaskWrapper}>
         

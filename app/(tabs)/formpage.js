@@ -44,6 +44,7 @@ const FormPage = () => {
           onValueChange={(isRecruiter) => setIsRecruiter(isRecruiter)}
           value={isRecruiter}
         >
+          <View style={{flexDirection: 'row', alignItems: 'center', marginRight: 20,}}>
           <View style={styles.radioButton}>
             <RadioButton value={true} />
             <Text>Recruiter</Text>
@@ -51,6 +52,7 @@ const FormPage = () => {
           <View style={styles.radioButton}>
             <RadioButton value={false} />
             <Text>Job Seeker</Text>
+          </View>
           </View>
         </RadioButton.Group>
       </View>
